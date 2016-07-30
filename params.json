@@ -1,6 +1,6 @@
 {
-  "name": "java 内存泄漏",
+  "name": "java 创建对象",
   "tagline": "Java",
-  "body": "### Java 内存溢出的三种方式 \r\n1. PermGen space 方法区溢出 加载过多的class\r\n2. Java heap space 堆溢出 堆中对象过多\r\n3. unable to create new native thread 系统内存太少导致无法创建本地线程\r\n\r\n### 如何解决\r\n1. PermGen space \r\n    1G内存环境下java jvm 的参数设置参考：JAVA_OPTS=\"-server -Xms800m -Xmx800m -XX:PermSize=64M -XX:MaxNewSize=256m -     XX:MaxPermSize=128m -Djava.awt.headless=true\"\r\n   \r\n2. Java heap space \r\n   * 先确定是否有内存泄漏（内存检测MAT）\r\n   * 然后修改JVM参数(参考方法去泄漏)\r\n3. unable to create new native thread 不要将JVM参数设置过大而导致本地内存不足，或者可以调整栈内存\r\n\r\n",
+  "body": "### Java 创建对象的四种方式\r\n1. new 对象属性为默认的初始值\r\n2. clone 俗称浅拷贝\r\n3. forName 或者反射 属性为对象默认值\r\n4. 反序列化 属性为序列化时的值\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
